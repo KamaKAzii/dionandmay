@@ -44,5 +44,9 @@ module Dionandmay
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Stylesheet engine
+    config.generators.stylesheet_engine = :sass
+    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
   end
 end

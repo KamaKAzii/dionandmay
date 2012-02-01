@@ -5,3 +5,6 @@ tmp/
 .sass-cache/
 *.swp
 *.swo
+*.psd
+*.ai
+*.eps
