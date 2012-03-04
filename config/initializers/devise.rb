@@ -220,4 +220,9 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
+
+  # Custom stuffs
+  config.http_authenticatable_on_xhr = false
+  config.navigational_formats = [:html, :json]
+
 end
