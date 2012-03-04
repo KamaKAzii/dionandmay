@@ -10,4 +10,9 @@ class SessionsController < Devise::SessionsController
     return render :json => {:success => false, :errors => ["Login failed."]}
   end
 
+  def destroy
+    signed_out = sign_out(resource_name)
+    return render :json => {:destroy => true, :yourface => "hello"}
+  end
+
 end

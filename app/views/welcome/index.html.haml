@@ -8,3 +8,5 @@
     =f.label :remember_me
     =f.submit 'Sign in'
     =link_to "forgot your pasword?", new_password_path('user')
+  %form{:id => "sign_out"}
+    %input{:type => "submit", :value => "Sign Out"}
