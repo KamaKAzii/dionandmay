@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120305095405) do
+ActiveRecord::Schema.define(:version => 20120305103302) do
+
+  create_table "invitations", :force => true do |t|
+    t.string   "surname"
+    t.string   "first_name"
+    t.string   "invitation_id"
+    t.string   "username"
+    t.string   "invite_text"
+    t.integer  "members"
+    t.boolean  "ceremony"
+    t.boolean  "reception"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

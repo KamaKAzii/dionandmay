@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  surname: MyString
+  first_name: MyString
+  invitation_id: MyString
+  username: MyString
+  invite_text: MyString
+  members: 1
+  ceremony: false
+  reception: false
+
+two:
+  surname: MyString
+  first_name: MyString
+  invitation_id: MyString
+  username: MyString
+  invite_text: MyString
+  members: 1
+  ceremony: false
+  reception: false
