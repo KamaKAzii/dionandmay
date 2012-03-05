@@ -19,7 +19,7 @@ $("#sign_in").submit(function() {
 $("#sign_in").submit(function() {
   $self = $(this);
   var user_data = {};
-  user_data.email = $self.find("#user_email").val();
+  user_data.username = $self.find("#user_username").val();
   user_data.password = $self.find("#user_password").val();
   if ($self.find("#user_remember_me").attr("checked")) {
     user_data.remember_me = 1;
