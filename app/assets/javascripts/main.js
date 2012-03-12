@@ -1,20 +1,4 @@
-/*
-$("#sign_in").submit(function() {
-  var email = $('#user_email').val();
-  var password = $('#user_password').val();
-  var data = {remote: true, commit: "Sign in", utf8: "✓",
-    user: {remember_me: 1, password: password, email: email}};
-
-  $.post('/users/sign_in', data, function(resp) {
-    if (resp.success){
-      console.log(resp);
-    } else {
-      console.log("fail");
-    }
-  });
-  return false;
-});
-*/
+// AJAX Calls
 
 $("#sign_in").submit(function() {
   $self = $(this);
@@ -51,3 +35,22 @@ $("#sign_out").submit(function() {
   });
   return false;
 });
+
+// Utility functions
+
+utilities = {
+  resizeSection:
+    function ($targetSection, $targetWidth, $targetHeight) {
+      $targetSection.animate(
+        { height: $targetHeight, width: $targetWidth },
+        { duration: 800 }
+      );
+    },
+  callNewContent: function(controller, action, width, height) {
+    var targetPath = "/" + controller + "/" + action;
+    $.get(targetPath, function(data) {
+      console.log(data);
+    })
+    .error(function() { console.log("Get request was not successful :<"); });
+  }
+};

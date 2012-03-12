@@ -3,11 +3,9 @@ class WelcomeController < ApplicationController
   def index
   end
 
-  def yourface
+  def contact
     respond_to do |format|
-      format.json {
-        render :json => {:message => "this is xhr request", :success => "success"}
-      }
+      format.json { render "welcome/_contact.json" }
     end
   end
 
