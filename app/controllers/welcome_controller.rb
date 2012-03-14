@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
 
   def contact
     respond_to do |format|
-      format.json { render "welcome/_contact.json" }
+      format.json { render "welcome/contact", :content_type => "text/javascript" }
     end
   end
 

@@ -48,9 +48,12 @@ utilities = {
     },
   callNewContent: function(controller, action, width, height) {
     var targetPath = "/" + controller + "/" + action;
-    $.get(targetPath, function(data) {
-      console.log(data);
-    })
-    .error(function() { console.log("Get request was not successful :<"); });
+    $.ajax({
+      url: targetPath,
+      complete: function(xhr, status) {
+        var returned = xhr.responseText;
+        console.log(returned.template);
+      }
+    });
   }
 };
