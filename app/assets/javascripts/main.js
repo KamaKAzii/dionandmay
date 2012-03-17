@@ -19,7 +19,17 @@ $("#sign_in").submit(function() {
     url: "/users/sign_in",
     data: data,
     success: function(data) {
-      console.log(data);
+      if (data.success) {
+        $(".result").html("Sign in successful. Please wait");
+        window.location = "/welcome/main";
+      } else {
+        $(".result").html("Please try again...");
+        $(":input, form")
+          .not(':button, :submit, :reset, :hidden')
+          .val('')
+          .removeAttr('checked')
+          .removeAttr('selected');
+      }
     }
   });
   return false;
@@ -48,12 +58,15 @@ utilities = {
     },
   callNewContent: function(controller, action, width, height) {
     var targetPath = "/" + controller + "/" + action;
-    $.ajax({
-      url: targetPath,
-      complete: function(xhr, status) {
-        var returned = xhr.responseText;
-        console.log(returned.template);
-      }
-    });
+    $.get(targetPath, function(data) {
+      console.log(data);
+    })
   }
 };
+
+
+// Collapse functionality
+$(".menu").on("click", function() {
+  var myTarget = $(this).attr("id");
+  $(".content." + myTarget).stop(true, true).slideToggle(500);
+});

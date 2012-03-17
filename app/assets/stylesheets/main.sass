@@ -1,14 +1,126 @@
+@import compass
+@import compass/reset
+
+// Variables
+$font-upper: 'Crimson text'
+
 body
   background: #BFD8BB url(asset_path("bg-repeat.png", image)) repeat left top
+  font-family: $font-upper
+  font-size: 13px
+  line-height: 20px
+
+div
+  margin-bottom: 20px
 
 h1
   font-size: 24px
 
 section
-  background: #FCF5ED
+  +box-shadow(rgba(0, 0, 0, 0.4), 0px, 0px, 15px)
+  background: #fff url(asset_path("bg-section.png", image)) repeat left top
   // Starting width
-  width: 400px
   // Minimum Width and Height
-  min-height: 400px
-  min-width: 400px
   margin: 200px auto 0 auto
+  width: 800px
+
+// Forms/Labels
+input[type="text"],
+input[type="password"]
+  +border-radius(4px)
+  +box-shadow(rgba(0, 0, 0, 0.2), 0px, 0px, 3px)
+  font-size: 20px
+  color: #4d3e36
+  padding: 0px 5px
+  border: 1px solid #cfc0b8
+  background-color: #f7f3f1
+  width: 300px
+  height: 45px
+  text-align: center
+input[type="submit"]
+  +border-radius(4px)
+  border: 1px solid #443b37
+  background-color: #c6b2a8
+  width: 100px
+  height: 30px
+  color: #443b37
+  font-family: $font-upper
+  text-transform: uppercase
+label
+  margin-top: 30px
+  font-family: $font-upper
+  text-transform: uppercase
+  display: block
+  color: #9d938e
+.action
+  margin-top: 30px
+
+// Page specific styles
+#sign-in
+  margin: 0px auto
+  padding-top: 50px
+  text-align: right
+  text-align: right
+  width: 350px
+  text-align: center
+  label[for="user_remember_me"],
+  #user_remember_me
+    display: none
+
+#main
+  padding: 20px
+  em, h2, h3, p
+    display: block
+    margin-bottom: 10px
+  em, h2, h3
+    text-transform: uppercase
+    font-size: 20px
+  .action
+    position: absolute
+    top: 60px
+    right: 50px
+  .rsvp
+    +pie-clearfix
+    .name
+      margin-top: 20px
+      text-transform: uppercase
+      font-size: 20px
+      text-align: center
+      border-top: 1px dashed #c6b2a8
+      border-bottom: 1px dashed #c6b2a8
+      margin: 0
+      padding: 10px 0
+    form
+      background: rgba(255, 255, 255, 0.3)
+      border-bottom: 1px dashed #c6b2a8
+      +float(left)
+      +pie-clearfix
+      position: relative
+      width: 355px
+      padding-bottom: 10px
+      &:nth-child(2n - 1)
+        margin-right: 40px
+      .sub-group
+        +float(left)
+        text-align: center
+        width: 200px
+        margin-bottom: 10px
+        margin-top: 10px
+        label
+          margin-top: 0
+  .menu
+    text-transform: uppercase
+    border-top: 1px dashed #c6b2a8
+    text-align: center
+    padding: 15px
+    margin-bottom: 0
+  .content
+    // Uncomment me when u want to go live
+    display: none
+    border-top: 1px dashed #c6b2a8
+    padding: 20px 0
+  #about-us
+    border-top: 2px solid #c6b2a8
+  .bridal-party
+    em
+      font-size: 15px

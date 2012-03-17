@@ -1,0 +1,349 @@
+#main
+
+
+
+  .top-bar.invitations
+    %p This is where the invites go
+
+
+  .menu#rsvp
+    RSVP
+  .content.rsvp
+    -@invitations.each do |invitation|
+      =form_for(invitation, :url => "/welcome/update_invite/" + invitation.id.to_s) do |f|
+        .name
+          =invitation.first_name
+          =invitation.surname
+        -if invitation.ceremony
+          .sub-group
+            =f.label :ceremony_accept, "Ceremony"
+            =f.check_box :ceremony_accept
+        -if invitation.reception
+          .sub-group
+            =f.label :reception_accept, "Reception"
+            =f.check_box :reception_accept
+        .action
+          =f.submit 'RSVP'
+
+
+  .menu#about-us
+    About us
+  .content.about-us
+    %h2
+      May
+
+    %p
+      May has always dreamed of getting married at the age of 24, and it looks like it’s coming true! Born and raised in Sydney, she grew up in a Christian family in the suburb of Croydon. 
+
+    %p
+      At a young age, she had thrived in the world of creativity, which led her to study in the field of design. After working six years in a role of admin, she has now finally entered into the field of fashion.
+
+    %p
+      2012 will be a big year for May, as there will be big changes ahead, but she is extremely excited to see what the future holds for her. She is also extremely eager to travel around the world.
+
+    %h2
+      Dion
+
+    %p
+      Dion was born on September 23rd 1987, as the youngest of three children. He grew up in ‘The Shire’ of Sydney and attended an agricultural high school situated in the west. He realized his passion for science in his senior years of high school, and subsequently went on to study physics and mathematics at university.
+
+    %p
+      Today Dion still studies full time at the University of Sydney, completing his PhD in physics. Dion enjoys playing squash, snooker and golf, reading science-fiction, and watching movie trailers in his spare time.
+
+    %h2
+      The Story of Boy Meets Girl 
+
+    %p
+      Rewind 6 years, to the summer of December ‘05. 
+
+    %p
+      Fresh out of high school, during the time of schoolies, May and Dion met at a rather unlikely location - Smiths Lake. 
+
+    %p
+      Love at first sight you ask? Not exactly.
+
+    %p
+      First impressions. Dion observes, ‘That girl (May) with her coloured streaks, leaning against the wall is pretty gangster!’ May, scanning the room, thinks to herself, ‘There is definitely no potential dating material in this room that’s for sure!’
+
+    %p
+      But those impressions changed with time...
+
+    %p
+      See they eventually realized they were like Yin &amp; Yang - polar opposites, personalities seemingly contrary yet complimentary and interdependent. Designer vs scientist, loud vs quiet, outgoing vs shy, intuition vs logic, messy vs organized, proactive vs inactive, and the list goes on. But there is definitely one factor that grounds their relationship - and that is their faith in Jesus.
+
+    %h2
+      A Few Questions
+
+    %em
+      Favourite food?
+    %p
+      MC: Oysters. Has to be raw and in copious amounts!
+    %p
+      DT: A steak that is cooked well.
+
+
+    %em
+      Mac or PC?
+    %p
+      MC: MAC OF COURSE!!!
+    %p
+      DT: I’ve come to appreciate both, thanks to May.
+
+    %em
+      What age did you both meet?
+    %p
+      MC: I was 17 at the time.
+    %p
+      DT: I was 18.
+
+    %em
+      And when did you start dating?
+    %p
+      MC: 19th of January, 2006.
+
+    %em
+      What are some things that attracted you to each other?
+    %p
+      MC: I would say Dion is the most intelligent boy I’ve ever met. He is also a very forgiving person and he understands me well.
+    %p
+      DT: I thought she was cute, especially in her frocks.
+
+    %em
+      What are some things that annoy you about each other?
+    %p
+      MC: His clumsiness. Somehow he manages to always step on my foot, or drops things... I think it’s genetic! Oh, and also when he farts without warning...
+    %p
+      DT: She refuses to answer all my questions if I ask too many...
+
+    %em
+      Your ideal date would be...
+    %p
+      DT: A relaxing day of eating, possibly multiple times.
+    %p
+      MC: Picnic at a nice park on a warm sunny day. Cheese and pâté would be a must!
+
+    %em
+      How many children would you want?
+    %p
+      MC: Maybe 3 max? I always wanted an older brother, so having a boy first would be nice!
+    %p
+      DT: Probably 2-3.
+
+    %em
+      What are some things you enjoy doing together?
+    %p
+      MC: These days, just chilling at home and watching TV series. 
+    %p
+      DT: We like to eat out together, in particular discovering new cafes/restaurants to eat at. We used to enjoy competing against each other in Tetris on the Nintendo DS.
+
+    %em
+      What makes a good husband/wife?
+    %p
+      MC: A man who is Godly, patient and can cook!
+    %p
+      DT: A woman who is considerate, loving, and pursues holiness.
+
+    %em
+      Finally, what’s the best thing about getting married?
+    %p
+      MC: Living under one roof and having full independence. I’m looking forward to decorating our own little pad.
+    %p
+      DT: Freedom. Starting a new family.
+
+
+
+  .menu#bridal-party
+    Bridal Party
+  .content.bridal-party
+    %h3
+      Simona Wong
+    %em
+      Maid of Honour
+
+    %p
+      May and Simona have developed many mutual friends over the years since their days at university. They both studied a Bachelor of Visual Communication together, and during that period they would see each other almost 6 times a week! With all that time together, Simona has learned all of May’s deepest secrets. They also share many common interests, especially their love for design. No matter what the occasion, you can always count on Simona to have a good night out! 
+
+    %h3
+      Amanda Ng
+    %em
+      Bridesmaid
+
+    %p
+      Amanda is the older sister that May never had. She is a kind hearted, generous and a sweet. They both met in the workplace, but now have moved on to their respective career paths. Even though they no longer see each other regularly, it always picks up where it last left off. Amanda has quite a large collection of expensive jewellery, which always makes it hard to buy her gifts!
+
+    %h3
+      Carol Mo
+    %em
+      Bridesmaid
+
+    %p
+      Carol is one May’s oldest childhood friend. She is an immense study bee, but still manages to make time to listen to May’s sorrows. They have definitely had their fair share of ups and downs. She appreciates a fine meal, so long as there is no blue cheese or pâté involved!
+
+
+    %h3
+      Emmet Rogan
+    %em
+      Best man
+
+    %p
+      Dion and Emmet have been best mates since the start of high school. From the beginning, they shared their love for music, web design, and computer games. Emmet is a professional web developer by day, owns hundreds of white shirts, and is a yo-yo master.
+
+    %h3
+      Nicholas Tsang
+    %em
+      Groomsman
+
+    %p
+      Nick is one of Dion’s closest friend at church, who is perhaps the only friend that appreciates a good round of golf. He is a Ralph Lauren mascot by day, Futsal fanatic by night, and eats way too many cheeseburgers.
+
+    %h3
+      Jonathan Abednego
+    %em
+      Groomsman
+
+    %p
+      Jon is one of Dion’s closest friend at church, who shares his passion for cue sports with Dion. He has meetings all day, works out too hard at the gym, but indulges on his forbidden love of KFC. 
+
+
+
+  .menu#gifts
+    Notes on Gifts
+  .content.gifts
+    %p
+      Your presence at at our wedding is the greatest gift of all. However if you would wish to help us build our new future together, we kindly request you to contribute to our wishing well.
+
+
+
+  .menu#faq
+    FAQ
+  .content.faq
+    %dl
+      %dt
+        When do I need to RSVP by?
+      %dd
+        We kindly ask you to RSVP by 26 April 2012 
+      %dt
+        Do I have to RSVP for everyone before I submit?
+      %dd
+        Yes, we encourage you to do so.
+      %dt
+        Can I change my RSVP after I submit it?
+      %dd
+        Yes, you may change it as many times as you wish before the RSVP date.
+      %dt
+        Is there a gift registry?
+      %dd
+        Unfortunately we will not be operating a gift registry for our wedding. However, if you do wish to contribute to our new future together, please consider contributing to our wishing well on the day of our ceremony.
+      %dt
+        Are children allowed at the ceremony?
+      %dd
+        Yes we welcome all children to the ceremony.
+      %dt
+        Are children allowed at the reception?
+      %dd
+        Unfortunately we kindly request that no children be present for the duration of the reception. Thank you.
+
+
+
+  .menu#ceremony-venue
+    Ceremony Venue
+  .content.ceremony-venue
+    %em
+      General information
+
+    %p
+      http://www.ststephens.org.au/
+    %p
+      St. Stephen's Church is a beautiful Gothic church built in 1874 and is considered the finest example of the work of architect Edmund Blackett. 
+    %p
+      The ceremony will begin at 1pm on the 26th of May, 2012. Afternoon tea will be served shortly after the ceremony.
+
+    %em
+      Getting there
+
+    %p
+      [embed google map]
+
+    %p
+      St. Stephen’s Anglican Church is located at 189 Church Street, Newtown - just off the main road of King street.
+
+    %dl
+      %dt
+        By car 
+      %dd
+      There are many side streets surrounding St. Stephens which offer 1-2 hours of free parking. However be advised that parking may be difficult to find on a Saturday morning, so please allocate extra time to find parking if you are driving. 
+
+      %dt
+        By train
+      %dd
+        The closest train station to St. Stephens is approximately a 5 minute walk to Newtown station. Trains from Central station to Newtown station depart approximately every 15 minutes. 
+
+      %dt
+        By bus 
+      %dd
+        Several buses travel through Newtown, in particular Sydney buses 422, 426, 428, 423, 352 and the metro bus M30, many of which pass through Railway Square at Central.
+
+
+  .menu#reception-venue
+    Reception Venue
+  .content.reception-venue
+    %em
+      General information
+
+    %p
+      http://merivale.com.au/corporate/venues/penthouse/
+
+    %p
+      The reception will start from 6:30pm which will be held at the Ivy Penthouse. A luxurious rooftop oasis overlooking the pool, the Ivy Penthouse would have to be Sydney’s most exquisite event space. A spa pool and balcony surrounded by lush tropical planting and a circular leather sofa are key features of the sunken lounge area.
+
+    %p
+      Please note that the dress attire for the evening will be cocktail. Canapés and drinks will also be served on the night. 
+
+    %p
+      We kindly request no children at the reception. 
+
+    %em
+      Getting there
+
+    %p
+      [embed google map]
+
+    %p
+      The Ivy Penthouse is located on Level 5, 320 George St, Sydney, in the heart of the CBD district.
+
+    %dl
+      %dt
+        By car 
+      %dd
+      If you plan to drive out to Sydney city, you have either two options:  to park on the street, or to park in a secure parking lot. Finding street parking on a Saturday night may be difficult, but will cost at most $12 for 4 hours of parking (which is free after 10pm). On the other hand, there are many parking lots littered across the city. The closest Wilson parking lots to the Ivy Penthouse are Angel Place, 123 Pitt St and MLC Centre, 19-29 King St. 
+
+      %dt
+        By train
+      %dd
+        The closest train station is Wynyard station which is approximately a 5 minute walk to the Ivy Penthouse. 
+
+      %dt
+        By bus 
+      %dd
+        Many buses travel up George st and stop at the Ivy. For further information please visit www.131500.com.au
+
+
+  .menu#gifts
+    Notes on Gifts
+  .content.gifts
+    %p
+      Your presence at at our wedding is the greatest gift of all. However if you would wish to help us build our new future together, we kindly request you to contribute to our wishing well.
+
+
+  .menu#contact-us
+    Contact us
+  .content.contact-us
+    %p
+      For any questions or enquiries please email us at mail@mayanddion.com, or complete the form below:
+
+    %p
+      Name:
+    %p
+      Email:
+    %p
+      Query:
