@@ -266,6 +266,16 @@
           %dd
             Unfortunately we kindly request that no children be present for the duration of the reception. Thank you.
 
+      .menu#gallery
+        Gallery
+      .content.gallery
+        %em Engagement
+        -for i in 1..27
+          -tempNumber = sprintf '%03d', i
+          -tempName = "thumbnails/thumb" + tempNumber + ".jpg"
+          =image_tag(tempName, :id => tempNumber, :class => "thumbnail")
+
+
 
       .menu#acknowledgements
         Acknowledgements

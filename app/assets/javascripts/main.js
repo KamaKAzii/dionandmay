@@ -78,3 +78,16 @@ $(".modaltrigger").unbind().on("click", function() {
     $(this).fadeOut();
   });
 });
+
+// Gallery function
+$(".thumbnail").on("click", function() {
+  var source = $(this).attr("id");
+  $("<div/>")
+    .addClass("fullsize")
+    .html("<img src='/assets/large/" + source + ".jpg' />")
+    .appendTo($("body"));
+  $(".fullsize").fadeIn();
+  $(".fullsize").on("click", function() {
+    $(this).fadeOut(function() { $(this).remove(); });
+  });
+});
