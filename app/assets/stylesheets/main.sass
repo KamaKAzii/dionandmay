@@ -16,6 +16,13 @@ div
 h1
   font-size: 24px
 
+a
+  color: #443b37
+  text-decoration: none
+  &:hover
+    color: lighten(#443b37, 40%)
+    
+
 section
   +box-shadow(rgba(0, 0, 0, 0.4), 0px, 0px, 15px)
   background: #fff url(asset_path("bg-section.png", image)) repeat left top
@@ -56,6 +63,10 @@ label
   margin-top: 30px
 
 // Page specific styles
+#logo_large
+  display: block
+  margin: 0 auto
+
 #sign-in
   margin: 0px auto
   padding-top: 50px
@@ -83,7 +94,7 @@ label
       margin-bottom: 10px
   .action
     position: absolute
-    top: 60px
+    top: 30px
     right: 50px
   .rsvp
     +pie-clearfix
@@ -120,6 +131,9 @@ label
     text-align: center
     padding: 15px
     margin-bottom: 0
+    &:hover
+      background: rgba(255, 255, 255, 0.3)
+      cursor: pointer
   .content
     // Uncomment me when u want to go live
     display: none
@@ -128,6 +142,9 @@ label
     margin-bottom: 0
   #about-us
     border-top: 2px solid #c6b2a8
+  .about-us
+    em
+      font-size: 15px
   .bridal-party
     em
       font-size: 15px
@@ -135,3 +152,42 @@ label
     img
       display: block
       margin: 20px auto
+  .modal
+    // fadein/out
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    background: rgba(255, 255, 255, 0.4)
+    z-index: 100
+    .inner
+      text-transform: uppercase
+      text-align: center
+      &.one
+        p
+          position: absolute
+          top: 604px
+          text-align: center
+          width: 100%
+          font-size: 40px
+          color: #c6b2a8
+      &.both
+        p
+          position: absolute
+          top: 464px
+          text-align: center
+          width: 100%
+          font-size: 40px
+          color: #c6b2a8
+#logout
+  text-decoration: none
+  text-transform: uppercase
+  display: block
+  text-align: right
+  padding-top: 5px
+  padding-right: 20px
+
+section.index
+  width: 400px
+  height: 400px

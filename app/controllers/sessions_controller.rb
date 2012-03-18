@@ -12,7 +12,7 @@ class SessionsController < Devise::SessionsController
 
   def destroy
     signed_out = sign_out(resource_name)
-    return render :json => {:destroy => true, :yourface => "hello"}
+    redirect_to "/welcome/index"
   end
 
 end

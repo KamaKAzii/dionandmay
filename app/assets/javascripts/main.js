@@ -70,3 +70,11 @@ $(".menu").on("click", function() {
   var myTarget = $(this).attr("id");
   $(".content." + myTarget).stop(true, true).slideToggle(500);
 });
+
+// Invite functionality
+$(".modaltrigger").unbind().on("click", function() {
+  $(".modal").fadeIn();
+  $(".modal").on("click", function() {
+    $(this).fadeOut();
+  });
+});
