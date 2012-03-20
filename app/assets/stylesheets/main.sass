@@ -9,6 +9,8 @@ body
   font-family: $font-upper
   font-size: 13px
   line-height: 20px
+  letter-spacing: 0.6px
+  color: #5f505a
 
 div
   margin-bottom: 20px
@@ -28,7 +30,7 @@ section
   background: #fff url(asset_path("bg-section.png", image)) repeat left top
   // Starting width
   // Minimum Width and Height
-  margin: 200px auto 0 auto
+  margin: 150px auto 200px auto
   width: 800px
 
 // Forms/Labels
@@ -65,7 +67,7 @@ label
 // Page specific styles
 #logo_large
   display: block
-  margin: 0 auto
+  margin: 30px auto 0 auto
 
 #sign-in
   margin: 0px auto
@@ -131,6 +133,8 @@ label
     text-align: center
     padding: 15px
     margin-bottom: 0
+    color: #9ebdae
+    font-size: 16px
     &:hover
       background: rgba(255, 255, 255, 0.3)
       cursor: pointer
@@ -183,10 +187,13 @@ label
 #logout
   text-decoration: none
   text-transform: uppercase
-  display: block
-  text-align: right
+  display: inline-block
+  width: 100%
+  text-align: center
   padding-top: 5px
   padding-right: 20px
+  margin-bottom: 10px
+  font-size: 11px
 
 section.index
   width: 400px
@@ -212,3 +219,37 @@ section.index
     display: block
     margin: 200px auto 0 auto
     border: 1px solid #c6b2a8
+
+#twitter
+  text-align: center
+  margin: 0 auto 16px auto
+  padding-top: 16px
+  p
+    display: inline
+    margin: 0 auto
+    font-size: 14px
+    color: #9D938E
+    background: transparent url(asset_path("twitter_logo.png", image)) no-repeat 1px 1px
+    padding-left: 30px
+
+// Tabs!!!
+
+.tab
+  +float(left)
+  +pie-clearfix
+  margin-bottom: 16px
+  padding-right: 20px
+  text-transform: uppercase
+  font-size: 16px
+  color: #c4afa4
+  &:hover
+    cursor: pointer
+    color: #9D938E
+  &.active
+    text-decoration: underline
+.part
+  clear: both
+  display: none
+  margin-bottom: 0
+  &.active
+    display: block

@@ -1,7 +1,8 @@
 %section
   %article
-    =link_to("Logout", destroy_user_session_path, :method => :delete, :id => "logout")
-    =image_tag("logo_large.png", :id => "logo_large")
+    #twitter
+      %p
+    =image_tag("logo_small.png", :id => "logo_large")
 
     #main
 
@@ -178,54 +179,49 @@
       .menu#bridal-party
         Bridal Party
       .content.bridal-party
-        %h3
-          Simona Wong
-        %em
-          Maid of Honour
+        .active.tab#bridesmaids
+          Bridesmaids
+        .tab#groomsmen
+          Groomsmen
+        .part.bridesmaids.active
+          %h3
+            simona wong
+          %em
+            maid of honour
+          %p
+            may and simona have developed many mutual friends over the years since their days at university. they both studied a bachelor of visual communication together, and during that period they would see each other almost 6 times a week! with all that time together, simona has learned all of may’s deepest secrets. they also share many common interests, especially their love for design. no matter what the occasion, you can always count on simona to have a good night out!
+          %h3
+            amanda ng
+          %em
+            bridesmaid
+          %p
+            amanda is the older sister that may never had. she is a kind hearted, generous and a sweet. they both met in the workplace, but now have moved on to their respective career paths. even though they no longer see each other regularly, it always picks up where it last left off. amanda has quite a large collection of expensive jewellery, which always makes it hard to buy her gifts!
+          %h3
+            carol mo
+          %em
+            bridesmaid
+          %p
+            carol is one may’s oldest childhood friend. she is an immense study bee, but still manages to make time to listen to may’s sorrows. they have definitely had their fair share of ups and downs. she appreciates a fine meal, so long as there is no blue cheese or pâté involved!
 
-        %p
-          May and Simona have developed many mutual friends over the years since their days at university. They both studied a Bachelor of Visual Communication together, and during that period they would see each other almost 6 times a week! With all that time together, Simona has learned all of May’s deepest secrets. They also share many common interests, especially their love for design. No matter what the occasion, you can always count on Simona to have a good night out! 
-
-        %h3
-          Amanda Ng
-        %em
-          Bridesmaid
-
-        %p
-          Amanda is the older sister that May never had. She is a kind hearted, generous and a sweet. They both met in the workplace, but now have moved on to their respective career paths. Even though they no longer see each other regularly, it always picks up where it last left off. Amanda has quite a large collection of expensive jewellery, which always makes it hard to buy her gifts!
-
-        %h3
-          Carol Mo
-        %em
-          Bridesmaid
-
-        %p
-          Carol is one May’s oldest childhood friend. She is an immense study bee, but still manages to make time to listen to May’s sorrows. They have definitely had their fair share of ups and downs. She appreciates a fine meal, so long as there is no blue cheese or pâté involved!
-
-
-        %h3
-          Emmet Rogan
-        %em
-          Best man
-
-        %p
-          Dion and Emmet have been best mates since the start of high school. From the beginning, they shared their love for music, web design, and computer games. Emmet is a professional web developer by day, owns hundreds of white shirts, and is a yo-yo master.
-
-        %h3
-          Nicholas Tsang
-        %em
-          Groomsman
-
-        %p
-          Nick is one of Dion’s closest friend at church, who is perhaps the only friend that appreciates a good round of golf. He is a Ralph Lauren mascot by day, Futsal fanatic by night, and eats way too many cheeseburgers.
-
-        %h3
-          Jonathan Abednego
-        %em
-          Groomsman
-
-        %p
-          Jon is one of Dion’s closest friend at church, who shares his passion for cue sports with Dion. He has meetings all day, works out too hard at the gym, but indulges on his forbidden love of KFC. 
+        .part.groomsmen
+          %h3
+            Emmet Rogan
+          %em
+            Best man
+          %p
+            Dion and Emmet have been best mates since the start of high school. From the beginning, they shared their love for music, web design, and computer games. Emmet is a professional web developer by day, owns hundreds of white shirts, and is a yo-yo master.
+          %h3
+            Nicholas Tsang
+          %em
+            Groomsman
+          %p
+            Nick is one of Dion’s closest friend at church, who is perhaps the only friend that appreciates a good round of golf. He is a Ralph Lauren mascot by day, Futsal fanatic by night, and eats way too many cheeseburgers.
+          %h3
+            Jonathan Abednego
+          %em
+            Groomsman
+          %p
+            Jon is one of Dion’s closest friend at church, who shares his passion for cue sports with Dion. He has meetings all day, works out too hard at the gym, but indulges on his forbidden love of KFC. 
 
 
 
@@ -379,3 +375,5 @@
           Email:
         %p
           Query:
+
+    =link_to("Logout", destroy_user_session_path, :method => :delete, :id => "logout")

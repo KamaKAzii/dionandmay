@@ -65,6 +65,7 @@ utilities = {
 };
 
 
+
 // Collapse functionality
 $(".menu").on("click", function() {
   var myTarget = $(this).attr("id");
@@ -91,3 +92,51 @@ $(".thumbnail").on("click", function() {
     $(this).fadeOut(function() { $(this).remove(); });
   });
 });
+
+
+// Tab functionality
+$(".tab").on("click", function() {
+  if (!$(this).hasClass("active")) {
+    // Remove current active part's active class
+    $(this).siblings(".part." + findThisId).each(function() {
+      $(this).removeClass("active");
+    });
+    // Remove current active tab's active class
+    $(this).siblings(".tab.active").each(function() {
+      $(this).removeClass("active");
+    });
+    // Add active class to new tab
+    $(this).addClass("active");
+    // Add active calss to new tab's part
+    $(this).siblings(".part." + findThisId).each(function() {
+      $(this).addClass("active");
+    });
+    $(this).addClass("active");
+    var findThidId = $(this).attr("id");
+  }
+});
+
+
+$(document).ready(function() {
+  var user = 'mayanddion';
+  $.getJSON(
+    'http://twitter.com/statuses/user_timeline.json?screen_name=' + user + '&count=1&callback=?',
+    function(data) {
+      var tweet = data[0].text;
+      var theTime = data[0].created_at;
+      tweet = tweet.replace(
+        /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig,
+        function(url) {
+          return '<a href="' + url + '">' + url + '</a>';
+        }
+      )
+      .replace(/B@([_a-z0-9]+)/ig,
+        function(reply) {
+          return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+        }
+      );
+      $("#twitter p").html(tweet + " <br />- " + theTime);
+    }
+  );
+});
+  
