@@ -97,8 +97,9 @@ $(".thumbnail").on("click", function() {
 // Tab functionality
 $(".tab").on("click", function() {
   if (!$(this).hasClass("active")) {
+    var findThisId = $(this).attr("id");
     // Remove current active part's active class
-    $(this).siblings(".part." + findThisId).each(function() {
+    $(this).siblings(".part.active").each(function() {
       $(this).removeClass("active");
     });
     // Remove current active tab's active class
@@ -112,7 +113,6 @@ $(".tab").on("click", function() {
       $(this).addClass("active");
     });
     $(this).addClass("active");
-    var findThidId = $(this).attr("id");
   }
 });
 
