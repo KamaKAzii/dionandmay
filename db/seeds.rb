@@ -6,7 +6,7 @@ increment = 1
 
 open("_documents/invitations.csv") do |invitations|
   invitations.read.each_line do |invitation|
-    surname, first_name, invitation_id, username, invite_text, members, ceremony, reception = invitation.chomp.split(",")
+    surname, first_name, invitation_id, username, invite_text, members, ceremony, reception = invitation.chomp.split("|")
 
     email = increment.to_s + incrementemail
     increment = increment + 1

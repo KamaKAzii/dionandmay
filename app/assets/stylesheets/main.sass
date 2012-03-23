@@ -7,7 +7,7 @@ $font-upper: 'Crimson text'
 body
   background: #BFD8BB url(asset_path("bg-repeat.png", image)) repeat left top
   font-family: $font-upper
-  font-size: 13px
+  font-size: 14px
   line-height: 20px
   letter-spacing: 0.6px
   color: #5f505a
@@ -76,24 +76,41 @@ label
   text-align: right
   width: 350px
   text-align: center
+  position: relative
   label[for="user_remember_me"],
   #user_remember_me
     display: none
+  .help-link
+    position: absolute
+    left: 0
+    bottom: -140px
+    text-align: center
+    width: 100%
+    a
+      text-decoration: underline
 
 #main
-  padding: 20px
+  padding: 40px 40px 20px
   em, h2, h3, p
     display: block
     margin-bottom: 10px
   em, h2, h3
-    text-transform: uppercase
-    font-size: 20px
+    font-size: 16px
+  h2
+    margin-top: 40px
+    text-align: center
   dl
     dt
-      font-size: 16px
       margin-bottom: 5px
     dd
-      margin-bottom: 10px
+      margin-bottom: 25px
+      color: lighten(#5F505A, 20%)
+  em
+    text-align: center
+  .centered-link
+    text-align: center
+
+
   .action
     position: absolute
     top: 30px
@@ -115,7 +132,7 @@ label
       +float(left)
       +pie-clearfix
       position: relative
-      width: 355px
+      width: 337px
       padding-bottom: 10px
       &:nth-child(2n - 1)
         margin-right: 40px
@@ -136,16 +153,18 @@ label
     color: #9ebdae
     font-size: 16px
     &:hover
-      background: rgba(255, 255, 255, 0.3)
+      color: #C4AFA4
       cursor: pointer
   .content
     // Uncomment me when u want to go live
     display: none
-    border-top: 1px dashed #c6b2a8
+    // border-top: 1px dashed #c6b2a8
     padding: 20px 0
-    margin-bottom: 0
-  #about-us
+    margin-bottom: 20px
+  .menu.modaltrigger
     border-top: 2px solid #c6b2a8
+  #contact-us
+    border-bottom: 2px solid #c6b2a8
   .about-us
     em
       font-size: 15px
@@ -166,34 +185,71 @@ label
     background: rgba(255, 255, 255, 0.4)
     z-index: 100
     .inner
-      text-transform: uppercase
+      // text-transform: uppercase
       text-align: center
+      font-weight: 200
+      font-family: Lustria, serif
       &.one
         p
           position: absolute
           top: 604px
           text-align: center
           width: 100%
-          font-size: 40px
-          color: #c6b2a8
+          font-size: 26px
+          color: #5f505a
       &.both
         p
           position: absolute
           top: 464px
           text-align: center
           width: 100%
-          font-size: 40px
-          color: #c6b2a8
+          font-size: 26px
+          color: #5f505a
+
+.ceremony-venue, .reception-venue
+  dt
+    text-align: center
+
+.questions.part
+  em
+    margin-top: 30px
+    margin-bottom: 0 !important
+  p
+    color: lighten(#443b37, 40%)
+    margin-bottom: 0 !important
+
+.bridesmaids, .groomsmen
+  em
+    text-align: left !important
+  h3
+    text-align: center
+#quick-contact
+  padding-left: 40px
+  .twitter-link
+    background: transparent url(asset_path("twitter_logo.png", image)) no-repeat left 3px
+    width: 23px
+    height: 22px
+    float: left
+    margin-bottom: 10px
+    margin-left: 10px
+  .facebook-link
+    background: transparent url(asset_path("facebook_logo.png", image)) no-repeat left top
+    float: left
+    width: 10px
+    height: 22px
+    margin-bottom: 0
+  .email-link
+    clear: both
+
 #logout
+  padding-left: 40px
   text-decoration: none
-  text-transform: uppercase
   display: inline-block
   width: 100%
-  text-align: center
+  text-align: left
   padding-top: 5px
   padding-right: 20px
-  margin-bottom: 10px
-  font-size: 11px
+  margin-bottom: 40px
 
 section.index
   width: 400px
@@ -201,10 +257,12 @@ section.index
 
 .gallery
   .thumbnail
-    margin: 5px 16px
+    margin: 12px
     border: 1px dashed #c6b2a8
     &:hover
       cursor: pointer
+  em
+    text-align: center
 
 .fullsize
   display: none
@@ -223,7 +281,7 @@ section.index
 #twitter
   text-align: center
   margin: 0 auto 16px auto
-  padding-top: 16px
+  padding-top: 46px
   p
     display: inline
     margin: 0 auto
@@ -237,9 +295,8 @@ section.index
 .tab
   +float(left)
   +pie-clearfix
-  margin-bottom: 16px
+  margin-bottom: 40px
   padding-right: 20px
-  text-transform: uppercase
   font-size: 16px
   color: #c4afa4
   &:hover
@@ -253,3 +310,10 @@ section.index
   margin-bottom: 0
   &.active
     display: block
+h3
+  margin-top: 30px
+
+
+#time
+  text-align: center
+  margin-bottom: 40px

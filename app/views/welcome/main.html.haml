@@ -1,3 +1,13 @@
+// Figuring out if they've RSVPed to anything
+-acceptedFlag = 0
+-@invitations.each do |invitation|
+  -if invitation.ceremony_accept != 0
+    -acceptedFlag = acceptedFlag + 1
+  -if invitation.reception_accept != 0
+    -acceptedFlag = acceptedFlag + 1
+-if acceptedFlag == 0
+  #no-accept-yet
+
 %section
   %article
     #twitter
@@ -5,13 +15,17 @@
     =image_tag("logo_small.png", :id => "logo_large")
 
     #main
+      #time
+
+        
+          
+
 
       // Controller logic LOLZ
       -receptionflag = 0
       -@invitations.each do |invitation|
         -if invitation.reception == true
           -receptionflag = receptionflag + 1
-
 
       .menu.modaltrigger
         Invitation
@@ -27,6 +41,8 @@
             %p
               =@invitations.first.invite_text
             =image_tag("invite_one.png")
+
+
 
 
 
@@ -51,128 +67,137 @@
 
 
       .menu#about-us
-        About us - May &amp; Dion, The Story of Boy Meets Girl, A Few Questions
+        About us
       .content.about-us
-        %h2
-          May
-
-        %p
-          May has always dreamed of getting married at the age of 24, and it looks like it’s coming true! Born and raised in Sydney, she grew up in a Christian family in the suburb of Croydon. 
-
-        %p
-          At a young age, she had thrived in the world of creativity, which led her to study in the field of design. After working six years in a role of admin, she has now finally entered into the field of fashion.
-
-        %p
-          2012 will be a big year for May, as there will be big changes ahead, but she is extremely excited to see what the future holds for her. She is also extremely eager to travel around the world.
-
-        %h2
-          Dion
-
-        %p
-          Dion was born on September 23rd 1987, as the youngest of three children. He grew up in ‘The Shire’ of Sydney and attended an agricultural high school situated in the west. He realized his passion for science in his senior years of high school, and subsequently went on to study physics and mathematics at university.
-
-        %p
-          Today Dion still studies full time at the University of Sydney, completing his PhD in physics. Dion enjoys playing squash, snooker and golf, reading science-fiction, and watching movie trailers in his spare time.
-
-        %h2
-          The Story of Boy Meets Girl 
-
-        %p
-          Rewind 6 years, to the summer of December ‘05. 
-
-        %p
-          Fresh out of high school, during the time of schoolies, May and Dion met at a rather unlikely location - Smiths Lake. 
-
-        %p
-          Love at first sight you ask? Not exactly.
-
-        %p
-          First impressions. Dion observes, ‘That girl (May) with her coloured streaks, leaning against the wall is pretty gangster!’ May, scanning the room, thinks to herself, ‘There is definitely no potential dating material in this room that’s for sure!’
-
-        %p
-          But those impressions changed with time...
-
-        %p
-          See they eventually realized they were like Yin &amp; Yang - polar opposites, personalities seemingly contrary yet complimentary and interdependent. Designer vs scientist, loud vs quiet, outgoing vs shy, intuition vs logic, messy vs organized, proactive vs inactive, and the list goes on. But there is definitely one factor that grounds their relationship - and that is their faith in Jesus.
-
-        %h2
+        .active.tab#may-and-dion
+          May &amp; Dion
+        .tab#boy-meets-girl
+          The Story of Boy Meets Girl
+        .tab#questions
           A Few Questions
+        .part.may-and-dion.active
+          %h2
+            May
 
-        %em
-          Favourite food?
-        %p
-          MC: Oysters. Has to be raw and in copious amounts!
-        %p
-          DT: A steak that is cooked well.
+          %p
+            May has always dreamed of getting married at the age of 24, and it looks like it’s coming true! Born and raised in Sydney, she grew up in a Christian family in the suburb of Croydon. 
+
+          %p
+            At a young age, she had thrived in the world of creativity, which led her to study in the field of design. After working six years in a role of admin, she has now finally entered into the field of fashion.
+
+          %p
+            2012 will be a big year for May, as there will be big changes ahead, but she is extremely excited to see what the future holds for her. She is also extremely eager to travel around the world.
+
+          %h2
+            Dion
+
+          %p
+            Dion was born on September 23rd 1987, as the youngest of three children. He grew up in ‘The Shire’ of Sydney and attended an agricultural high school situated in the west. He realized his passion for science in his senior years of high school, and subsequently went on to study physics and mathematics at university.
+
+          %p
+            Today Dion still studies full time at the University of Sydney, completing his PhD in physics. Dion enjoys playing squash, snooker and golf, reading science-fiction, and watching movie trailers in his spare time.
+        .part.boy-meets-girl
+          %h2
+            The Story of Boy Meets Girl 
+
+          %p
+            Rewind 6 years, to the summer of December ‘05. 
+
+          %p
+            Fresh out of high school, during the time of schoolies, May and Dion met at a rather unlikely location - Smiths Lake. 
+
+          %p
+            Love at first sight you ask? Not exactly.
+
+          %p
+            First impressions. Dion observes, ‘That girl (May) with her coloured streaks, leaning against the wall is pretty gangster!’ May, scanning the room, thinks to herself, ‘There is definitely no potential dating material in this room that’s for sure!’
+
+          %p
+            But those impressions changed with time...
+
+          %p
+            See they eventually realized they were like Yin &amp; Yang - polar opposites, personalities seemingly contrary yet complimentary and interdependent. Designer vs scientist, loud vs quiet, outgoing vs shy, intuition vs logic, messy vs organized, proactive vs inactive, and the list goes on. But there is definitely one factor that grounds their relationship - and that is their faith in Jesus.
+
+        .part.questions
+
+          %h2
+            A Few Questions
+
+          %em
+            Favourite food?
+          %p
+            MC: Oysters. Has to be raw and in copious amounts!
+          %p
+            DT: A steak that is cooked well.
 
 
-        %em
-          Mac or PC?
-        %p
-          MC: MAC OF COURSE!!!
-        %p
-          DT: I’ve come to appreciate both, thanks to May.
+          %em
+            Mac or PC?
+          %p
+            MC: MAC OF COURSE!!!
+          %p
+            DT: I’ve come to appreciate both, thanks to May.
 
-        %em
-          What age did you both meet?
-        %p
-          MC: I was 17 at the time.
-        %p
-          DT: I was 18.
+          %em
+            What age did you both meet?
+          %p
+            MC: I was 17 at the time.
+          %p
+            DT: I was 18.
 
-        %em
-          And when did you start dating?
-        %p
-          MC: 19th of January, 2006.
+          %em
+            And when did you start dating?
+          %p
+            MC: 19th of January, 2006.
 
-        %em
-          What are some things that attracted you to each other?
-        %p
-          MC: I would say Dion is the most intelligent boy I’ve ever met. He is also a very forgiving person and he understands me well.
-        %p
-          DT: I thought she was cute, especially in her frocks.
+          %em
+            What are some things that attracted you to each other?
+          %p
+            MC: I would say Dion is the most intelligent boy I’ve ever met. He is also a very forgiving person and he understands me well.
+          %p
+            DT: I thought she was cute, especially in her frocks.
 
-        %em
-          What are some things that annoy you about each other?
-        %p
-          MC: His clumsiness. Somehow he manages to always step on my foot, or drops things... I think it’s genetic! Oh, and also when he farts without warning...
-        %p
-          DT: She refuses to answer all my questions if I ask too many...
+          %em
+            What are some things that annoy you about each other?
+          %p
+            MC: His clumsiness. Somehow he manages to always step on my foot, or drops things... I think it’s genetic! Oh, and also when he farts without warning...
+          %p
+            DT: She refuses to answer all my questions if I ask too many...
 
-        %em
-          Your ideal date would be...
-        %p
-          DT: A relaxing day of eating, possibly multiple times.
-        %p
-          MC: Picnic at a nice park on a warm sunny day. Cheese and pâté would be a must!
+          %em
+            Your ideal date would be...
+          %p
+            DT: A relaxing day of eating, possibly multiple times.
+          %p
+            MC: Picnic at a nice park on a warm sunny day. Cheese and pâté would be a must!
 
-        %em
-          How many children would you want?
-        %p
-          MC: Maybe 3 max? I always wanted an older brother, so having a boy first would be nice!
-        %p
-          DT: Probably 2-3.
+          %em
+            How many children would you want?
+          %p
+            MC: Maybe 3 max? I always wanted an older brother, so having a boy first would be nice!
+          %p
+            DT: Probably 2-3.
 
-        %em
-          What are some things you enjoy doing together?
-        %p
-          MC: These days, just chilling at home and watching TV series. 
-        %p
-          DT: We like to eat out together, in particular discovering new cafes/restaurants to eat at. We used to enjoy competing against each other in Tetris on the Nintendo DS.
+          %em
+            What are some things you enjoy doing together?
+          %p
+            MC: These days, just chilling at home and watching TV series. 
+          %p
+            DT: We like to eat out together, in particular discovering new cafes/restaurants to eat at. We used to enjoy competing against each other in Tetris on the Nintendo DS.
 
-        %em
-          What makes a good husband/wife?
-        %p
-          MC: A man who is Godly, patient and can cook!
-        %p
-          DT: A woman who is considerate, loving, and pursues holiness.
+          %em
+            What makes a good husband/wife?
+          %p
+            MC: A man who is Godly, patient and can cook!
+          %p
+            DT: A woman who is considerate, loving, and pursues holiness.
 
-        %em
-          Finally, what’s the best thing about getting married?
-        %p
-          MC: Living under one roof and having full independence. I’m looking forward to decorating our own little pad.
-        %p
-          DT: Freedom. Starting a new family.
+          %em
+            Finally, what’s the best thing about getting married?
+          %p
+            MC: Living under one roof and having full independence. I’m looking forward to decorating our own little pad.
+          %p
+            DT: Freedom. Starting a new family.
 
 
 
@@ -185,24 +210,23 @@
           Groomsmen
         .part.bridesmaids.active
           %h3
-            simona wong
+            Simona Wong
           %em
-            maid of honour
+            Maid of Honour
           %p
-            may and simona have developed many mutual friends over the years since their days at university. they both studied a bachelor of visual communication together, and during that period they would see each other almost 6 times a week! with all that time together, simona has learned all of may’s deepest secrets. they also share many common interests, especially their love for design. no matter what the occasion, you can always count on simona to have a good night out!
+            May and Simona have developed many mutual friends over the years since their days at university. They both studied a Bachelor of Visual Communication together, and during that period they would see each other almost 6 times a week! With all that time together, Simona has learned all of May’s deepest secrets. They also share many common interests, especially their love for design. No matter what the occasion, you can always count on Simona to have a good night out! 
           %h3
-            amanda ng
+            Amanda Ng
           %em
-            bridesmaid
+            Bridesmaid
           %p
-            amanda is the older sister that may never had. she is a kind hearted, generous and a sweet. they both met in the workplace, but now have moved on to their respective career paths. even though they no longer see each other regularly, it always picks up where it last left off. amanda has quite a large collection of expensive jewellery, which always makes it hard to buy her gifts!
+            Amanda is the older sister that May never had. She is a kind hearted, generous and a sweet. They both met in the workplace, but now have moved on to their respective career paths. Even though they no longer see each other regularly, it always picks up where it last left off. Amanda has quite a large collection of expensive jewellery, which always makes it hard to buy her gifts!
           %h3
-            carol mo
+            Carol Mo
           %em
-            bridesmaid
+            Bridesmaid
           %p
-            carol is one may’s oldest childhood friend. she is an immense study bee, but still manages to make time to listen to may’s sorrows. they have definitely had their fair share of ups and downs. she appreciates a fine meal, so long as there is no blue cheese or pâté involved!
-
+            Carol is one May’s oldest childhood friend. She is an immense study bee, but still manages to make time to listen to May’s sorrows. They have definitely had their fair share of ups and downs. She appreciates a fine meal, so long as there is no blue cheese or pâté involved!
         .part.groomsmen
           %h3
             Emmet Rogan
@@ -271,6 +295,11 @@
           -tempName = "thumbnails/thumb" + tempNumber + ".jpg"
           =image_tag(tempName, :id => tempNumber, :class => "thumbnail")
 
+      .menu#cinema
+        Cinema
+      .content.cinema
+        %em Coming soon!
+
 
 
       .menu#acknowledgements
@@ -287,7 +316,7 @@
         %em
           General information
 
-        %p
+        %p.centered-link
           http://www.ststephens.org.au/
         %p
           St. Stephen's Church is a beautiful Gothic church built in 1874 and is considered the finest example of the work of architect Edmund Blackett. 
@@ -306,7 +335,7 @@
           %dt
             By car 
           %dd
-          There are many side streets surrounding St. Stephens which offer 1-2 hours of free parking. However be advised that parking may be difficult to find on a Saturday morning, so please allocate extra time to find parking if you are driving. 
+            There are many side streets surrounding St. Stephens which offer 1-2 hours of free parking. However be advised that parking may be difficult to find on a Saturday morning, so please allocate extra time to find parking if you are driving. 
 
           %dt
             By train
@@ -326,7 +355,7 @@
           %em
             General information
 
-          %p
+          %p.centered-link
             http://merivale.com.au/corporate/venues/penthouse/
 
           %p
@@ -350,7 +379,7 @@
             %dt
               By car 
             %dd
-            If you plan to drive out to Sydney city, you have either two options:  to park on the street, or to park in a secure parking lot. Finding street parking on a Saturday night may be difficult, but will cost at most $12 for 4 hours of parking (which is free after 10pm). On the other hand, there are many parking lots littered across the city. The closest Wilson parking lots to the Ivy Penthouse are Angel Place, 123 Pitt St and MLC Centre, 19-29 King St. 
+              If you plan to drive out to Sydney city, you have either two options:  to park on the street, or to park in a secure parking lot. Finding street parking on a Saturday night may be difficult, but will cost at most $12 for 4 hours of parking (which is free after 10pm). On the other hand, there are many parking lots littered across the city. The closest Wilson parking lots to the Ivy Penthouse are Angel Place, 123 Pitt St and MLC Centre, 19-29 King St. 
 
             %dt
               By train
@@ -367,13 +396,16 @@
         Contact us
       .content.contact-us
         %p
-          For any questions or enquiries please email us at mail@mayanddion.com, or complete the form below:
+          If you have any questions or queries, please contact us via <a href="mailto:mail@mayanddion.com" target="_blank" style="text-decoration: underline"> email</a>.
 
-        %p
-          Name:
-        %p
-          Email:
-        %p
-          Query:
+    #quick-contact
+      %a{:href => "http://www.facebook.com/mayanddion", :target => "_blank"}
+        .facebook-link
+      %a{:href => "http://www.twitter.com/mayanddion", :target => "_blank"}
+        .twitter-link
+      .email-link
+        %a{:href => "mailto:mail@mayanddion.com", :target => "_blank"}
+          mail@mayanddion.com
 
     =link_to("Logout", destroy_user_session_path, :method => :delete, :id => "logout")
+
